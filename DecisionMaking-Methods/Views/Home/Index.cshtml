@@ -1,0 +1,29 @@
+﻿@model int
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Get Numbers</h1>
+        <form action="/Home/GetNumbers" method="post">
+            <input type="number" name="number1" /> <br />
+            <input type="number" name="number2" /> <br />
+            <input type="submit" value="Send Numbers" />
+        </form>
+        <br />
+        <!-- Hvis der blevet sendt noget tilbage fra Controlleren, så udskriv det -->
+        @if (ViewContext.RouteData.Values["id"] != null)
+        {
+            @Model
+        }
+    </div>
+</body>
+</html>
